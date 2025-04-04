@@ -1,12 +1,12 @@
 # analyze_seco_timeline_myver
-📚 Research Progress Report – Developer Timeline Analysis Using World of Code
+Research Progress Report – Developer Timeline Analysis Using World of Code
 Presented by: Hiruy Worku
 Date: April 2, 2025
 
-🔍 Project Objective
+ Project Objective
 The goal of this project is to build a chronological timeline of software development activity for individual contributors in open source, filtered by programming language (e.g., Java). This timeline includes the first and last known commits made by a developer in a specific language, using data from the World of Code (WoC) dataset.
 
-🧭 Research Plan (Today’s Agenda)
+ Research Plan (Today’s Agenda)
 Start with a single developer, extract their commits.
 
 Filter commits by programming language, beginning with Java.
@@ -19,7 +19,7 @@ Package the logic into a reusable shell script.
 
 Push the project to GitHub and document it properly.
 
-🛠️ Tools Used
+ Tools Used
 World of Code dataset (basemaps like a2c, c2f, etc.)
 
 Lookup tool: getValues
@@ -30,7 +30,7 @@ Git & GitHub
 
 Linux environment on da0 server
 
-🧗 Challenges Faced & How We Solved Them
+Challenges Faced & How We Solved Them
 1. Developer Filtering
 We started by scanning a large dataset of developer metadata to look for developers with potential contributions in Java. We ran this shell snippet to analyze each developer’s commit files:
 
@@ -43,9 +43,9 @@ done | rev | cut -d. -f1 | rev | sort | uniq -c | sort -nr
 2. Finding a Suitable Developer
 We manually tested developers one by one. Many had commits but no .java files, or their commit hashes didn’t map to timestamps. After many failed candidates, we found:
 
-✅ Jessica Castelino – Had extensive Java activity and valid data.
+Jessica Castelino – Had extensive Java activity and valid data.
 
-✅ Pedro Sambini – Had C file activity (used later for testing).
+Pedro Sambini – Had C file activity (used later for testing).
 
 3. c2t Lookup Didn’t Work
 We expected to use c2t (commit-to-timestamp) lookups, but we encountered:
@@ -68,7 +68,7 @@ php-template
 Copy
 Edit
 <commit_hash>;timestamp;timezone;author;project_hash
-✅ Problem solved by switching from c2t → c2dat.
+Problem solved by switching from c2t → c2dat.
 
 4. Commit Sorting and Timestamp Conversion
 Once we had timestamps, we sorted them numerically and converted to readable form:
@@ -104,8 +104,8 @@ Jessica’s Java activity:
 sql
 Copy
 Edit
-🔵 First Commit: Mon Oct 15 2018
-🔴 Last Commit: Sat Sep 21 2019
+ First Commit: Mon Oct 15 2018
+ Last Commit: Sat Sep 21 2019
 Files included:
 
 MainActivity.java
@@ -119,13 +119,13 @@ Android resource files and Gradle config
 7. GitHub Push
 We encountered authentication issues pushing to a repo we were invited to. So instead:
 
-✅ Created a new repo under Hiruy's account
+ Created a new repo under Hiruy's account
 
-✅ Cloned it and moved the script inside
+ Cloned it and moved the script inside
 
-✅ Committed and pushed the work successfully
+ Committed and pushed the work successfully
 
-📘 Documentation
+ Documentation
 We also wrote a clear README.md explaining:
 
 Project goals
@@ -138,7 +138,7 @@ Example output
 
 Future plans
 
-🧠 Lessons Learned
+ Lessons Learned
 Always verify the availability of lookup maps (e.g., c2t vs c2dat)
 
 Not all developers have timestamped data — filtering is key
@@ -147,14 +147,14 @@ Building even a simple timeline requires integration of multiple mappings (a2c, 
 
 Good documentation and modular scripting are essential for scaling to multiple developers
 
-✅ Status as of Now
-🎯 One developer's timeline extracted and validated (Jessica Castelino)
+ Status as of Now
+ One developer's timeline extracted and validated (Jessica Castelino)
 
-🧪 System tested on a second developer (Pedro Sambini)
+ System tested on a second developer (Pedro Sambini)
 
-💻 Script is working and versioned on GitHub
+ Script is working and versioned on GitHub
 
-📄 Full documentation included
+ Full documentation included
 
-🔜 Ready to batch-process more developers and languages next
+ Ready to batch-process more developers and languages next
 
