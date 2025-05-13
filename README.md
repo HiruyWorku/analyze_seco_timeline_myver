@@ -158,3 +158,6 @@ Good documentation and modular scripting are essential for scaling to multiple d
 
  Ready to batch-process more developers and languages next
 
+
+
+to move a file to server: scp ~/Downloads/rsample-1000-a2AFullHT.txt Hiruy_00@da5.eecs.utk.edu:~
