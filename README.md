@@ -161,3 +161,9 @@ Good documentation and modular scripting are essential for scaling to multiple d
 
 
 to move a file to server: scp ~/Downloads/rsample-1000-a2AFullHT.txt Hiruy_00@da5.eecs.utk.edu:~
+
+
+to fix if output csv is distorted:
+```bash
+cat developer_top10language_timeline.csv | tr '|' ',' > fixed_developer_timeline.csv
+```
